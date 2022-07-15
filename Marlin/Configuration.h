@@ -40,7 +40,7 @@
  **                                                                                       **
  *******************************************************************************************/
 
-//#define KNUTWURST_KOSSEL_PLUS
+#define KNUTWURST_KOSSEL_PLUS
 //#define KNUTWURST_GRAPHIC_LCD
 //#define KNUTWURST_TMC
 //#define KNUTWURST_BLTOUCH
@@ -58,7 +58,7 @@
 // 1 ... aluminium heated bed with "BuildTak-like" sticker
 // 2 ... ultrabase heated bed
 #if ENABLED(KNUTWURST_KOSSEL_PLUS)
-   #define KNUTWURST_KOSSEL_ENABLE_BED 2
+   #define KNUTWURST_KOSSEL_ENABLE_BED 1
 #else
    #define KNUTWURST_KOSSEL_ENABLE_BED 0
 #endif
@@ -163,7 +163,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 250000
+#define BAUDRATE 115200
 
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
@@ -174,7 +174,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Knutwurst's Kossel Delta Printer"
+#define CUSTOM_MACHINE_NAME "Kossel Plus"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like http://www.uuidgenerator.net/version4
@@ -721,19 +721,19 @@
 
   #if ENABLED(KNUTWURST_KOSSEL_PLUS)
     // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
-    #define DELTA_PRINTABLE_RADIUS 120.0  // (mm)
+    #define DELTA_PRINTABLE_RADIUS 110.0  // (mm)
     
     // Center-to-center distance of the holes in the diagonal push rods.
-    #define DELTA_DIAGONAL_ROD 269.0        // (mm)
+    #define DELTA_DIAGONAL_ROD 266.8        // (mm)
     
     // Horizontal offset from middle of printer to smooth rod center.
-    #define DELTA_SMOOTH_ROD_OFFSET 188.0   // (mm)
+    #define DELTA_SMOOTH_ROD_OFFSET 176.5   // (mm)
     
     // Horizontal offset of the universal joints on the end effector.
     #define DELTA_EFFECTOR_OFFSET 31.0      // (mm)
     
     // Horizontal offset of the universal joints on the carriages.
-    #define DELTA_CARRIAGE_OFFSET 20.6    // (mm)
+    #define DELTA_CARRIAGE_OFFSET 12.5    // (mm)
     
     // Horizontal distance bridged by diagonal push rods when effector is centered.
     #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-(DELTA_EFFECTOR_OFFSET)-(DELTA_CARRIAGE_OFFSET))          // (mm) Get this value from G33 auto calibrate
@@ -747,7 +747,7 @@
   #endif
 
   // Distance between bed and nozzle Z home position
-  #define DELTA_HEIGHT 300.00             // (mm) Get this value from G33 auto calibrate
+  #define DELTA_HEIGHT 300             // (mm) Get this value from G33 auto calibrate
 
   #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // Get these values from G33 auto calibrate
 
@@ -1182,7 +1182,7 @@
  * Specify a Probe position as { X, Y, Z }
  */
 #if ANYCUBIC_PROBE_VERSION == 2
-  #define NOZZLE_TO_PROBE_OFFSET { 0, 0, -16.2 } //Offset for Probe until it clicks. So no need for paper leveling anymore!
+  #define NOZZLE_TO_PROBE_OFFSET { 0, 0, -16.33 } //Offset for Probe until it clicks. So no need for paper leveling anymore!
 #elif ANYCUBIC_PROBE_VERSION == 1
   #define NOZZLE_TO_PROBE_OFFSET { 0, 0, -19.0 }
 #else
@@ -1195,7 +1195,7 @@
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define MIN_PROBE_EDGE 30
+#define MIN_PROBE_EDGE 0
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 1000
@@ -1552,8 +1552,8 @@
 
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET 10              // Set Mesh bounds as an inset region of the bed // Olli
-  #define GRID_MAX_POINTS_X 5      // Don't use more than 15 points per axis, implementation limited.  // Olli
+  #define MESH_INSET 0              // Set Mesh bounds as an inset region of the bed // Olli
+  #define GRID_MAX_POINTS_X 7      // Don't use more than 15 points per axis, implementation limited.  // Olli
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   #define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle

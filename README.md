@@ -1,3 +1,11 @@
+# Note on this fork
+This has been adapted from Knutwurst's repo to fit my Kossel Linear Plus printer better. I did the follwowing:
+ * Change baudrate to the more standard 115200 as the 250000 did not work with my setup.
+ * Adjusted delta rod geometry to dimensions actually measured on my machine as standard values were off.
+ * Adjusted probing grid configuration to properly cover the build plate.
+
+You can find the original Readme of Knutwurst below. I only did minor changes, credit goes to him.
+
 # Knutwurst's Kossel Plus Firmware (based on Marlin 2.0.x)
 
 <span style="color: red;">(BITTE GENAU DURCHLESEN! / PLEASE READ CAREFULLY!)</span>
