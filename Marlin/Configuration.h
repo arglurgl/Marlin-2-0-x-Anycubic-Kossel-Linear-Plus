@@ -542,9 +542,15 @@
   //#define DEFAULT_Kd 440
 
   // Anycubic Kossel - run 'M106 S255' & 'M303 E0 C10 S200'
-  #define DEFAULT_Kp 22.36
-  #define DEFAULT_Ki 1.63
-  #define DEFAULT_Kd 76.48
+  //#define DEFAULT_Kp 22.36
+  //#define DEFAULT_Ki 1.63
+  //#define DEFAULT_Kd 76.48
+
+  //PID-Tuned to my Kossel linear plus, not perfect but much better
+  #define DEFAULT_Kp 10.16
+  #define DEFAULT_Ki 0.51
+  #define DEFAULT_Kd 50.56
+
 
   // Anycubic Kossel with silicon sock
   //#define DEFAULT_Kp 16.17
